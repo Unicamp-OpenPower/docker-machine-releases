@@ -4,6 +4,7 @@ github_version=$(cat github_version.txt)
 ftp_version=0.16.2-gitlab.11
 LOCALPATH=$GOPATH/src/github.com/docker/machine
 BINPATH=$GOPATH/src/github.com/docker/machine/bin
+edit_github_version="${github_version/-gitlab/""}"
 
 if [ $github_version != $ftp_version ]
 then
