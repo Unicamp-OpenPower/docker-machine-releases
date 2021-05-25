@@ -1,7 +1,6 @@
 github_version=$(cat github_version.txt)
 edit_github_version="${github_version/-/"."}"
-#ftp_version=$(cat ftp_version.txt)
-ftp_version=0.16.2-gitlab.11
+ftp_version=$(cat ftp_version.txt)
 del_version=$(cat delete_version.txt)
 
 if [ $edit_github_version != $ftp_version ]

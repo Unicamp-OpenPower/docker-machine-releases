@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 github_version=$(cat github_version.txt)
 edit_github_version="${github_version/-/"."}"
-#ftp_version=$(cat ftp_version.txt)
-ftp_version=0.16.2-gitlab.11
+ftp_version=$(cat ftp_version.txt)
 LOCALPATH=$GOPATH/src/github.com/docker/machine
 BINPATH=$GOPATH/src/github.com/docker/machine/bin
 
