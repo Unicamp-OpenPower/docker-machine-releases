@@ -6,7 +6,7 @@ ftp_version=0.16.2-gitlab.11
 LOCALPATH=$GOPATH/src/github.com/docker/machine
 BINPATH=$GOPATH/src/github.com/docker/machine/bin
 
-if [ $edit_github_versionn != $ftp_version ]
+if [ $edit_github_version != $ftp_version ]
 then
   git clone https://$USERNAME:$TOKEN@github.com/Unicamp-OpenPower/repository-scrips.git
   cd repository-scrips/
