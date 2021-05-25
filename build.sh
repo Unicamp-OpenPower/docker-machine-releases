@@ -1,9 +1,10 @@
 github_version=$(cat github_version.txt)
+edit_github_version="${github_version/-/"."}"
 #ftp_version=$(cat ftp_version.txt)
 ftp_version=0.16.2-gitlab.11
 del_version=$(cat delete_version.txt)
 
-if [ $github_version != $ftp_version ]
+if [ $edit_github_version != $ftp_version ]
 then
   cd $GOPATH
   mkdir -p src/github.com/docker/
@@ -19,10 +20,10 @@ then
   cd bin
   ls
   ./docker-machine-Linux-ppc64le --version
-  mv docker-machine-Linux-ppc64le docker-machine-v$github_version-ppc64le
+  mv docker-machine-Linux-ppc64le docker-machine-v$edit_github_version
 
   #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/docker-machine/latest/docker-machine-v$ftp_version-ppc64le"
   #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/docker-machine/latest docker-machine-v$github_version-ppc64le"
-  lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/docker-machine docker-machine-v$github_version-ppc64le"
+  lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/docker-machine docker-machine-v$edit_github_version"
   #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/docker-machine/docker-machine-v$del_version-ppc64le"
 fi
