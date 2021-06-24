@@ -1,7 +1,7 @@
 import requests
 # find and save the current Github release
 html = str(
-    requests.get('https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/raw/master/version/version.go')
+    requests.get('https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/raw/main/version/version.go')
     .content)
 index = html.find('Version = ')
 github_version = html[index + 11:index + 27].replace('<', '').replace(' ', '').replace('\\', '')
